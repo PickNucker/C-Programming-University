@@ -19,6 +19,9 @@ static struct queue_element *head;
 
 void walkList(bool (*callback) (pid_t, const char *)) {
 	// TODO: implement me
+	for(struct queue_element *x = head; x != NULL; x = x->next){
+		if(callback(x->pid, x->cmdLine)) break;
+	}
 }
 
 int insertElement(pid_t pid, const char *cmdLine) {

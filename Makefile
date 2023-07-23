@@ -11,3 +11,6 @@ clash.o: clash.c plist.h
 
 plist.o: plist.c plist.h
 	${CC} ${CFLAGS} -c plist.c
+
+clean:
+	rm -f clash *.o
